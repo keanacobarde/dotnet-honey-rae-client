@@ -17,5 +17,20 @@ export default function CreateTicket() {
         </FormGroup>
       </Col>
     </Row>
+    <Row>
+      <Col md={6}>
+        <FormGroup>
+          <Label for="exampleEmail">
+            Email
+          </Label>
+          <Input
+            id="exampleEmail"
+            name="email"
+            placeholder="with a placeholder"
+            type="email"
+          />
+        </FormGroup>
+      </Col>
+    </Row>
   </Form>);
 }
