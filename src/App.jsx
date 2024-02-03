@@ -11,6 +11,12 @@ function App() {
           <NavItem>
             <NavLink href="/tickets">Service Tickets</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink href="/tickets">Customers</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/tickets">Employees</NavLink>
+          </NavItem>
         </Nav>
       </Navbar>
       <Outlet />
