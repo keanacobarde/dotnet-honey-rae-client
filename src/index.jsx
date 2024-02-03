@@ -26,6 +26,9 @@ root.render(
         <Route index element={<Employees />} />
         <Route path=":id" element={<EmployeeDetails />} />
         </Route>
+        <Route path="customers" element={<Customers />}>
+          <Route index element={<Customers />}></Route>
+        </Route>
       </Route>
     </Routes>
   </BrowserRouter>,
