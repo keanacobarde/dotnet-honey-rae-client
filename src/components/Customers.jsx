@@ -16,9 +16,9 @@ export default function Customers() {
       <thead>
         <tr>
           <th>Id</th>
-          <th>Description</th>
-          <th>Emergency?</th>
-          <th>Date Completed</th>
+          <th>Name</th>
+          <th>Address/</th>
+          <th>Customer Details</th>
           <th></th>
         </tr>
       </thead>

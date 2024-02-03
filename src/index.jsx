@@ -9,6 +9,7 @@ import TicketsList from "./components/tickets/TicketsList";
 import TicketDetails from "./components/tickets/TicketDetails";
 import CreateTicket from "./components/tickets/CreateTicket";
 import Customers from "./components/Customers";
+import EmployeeList from "./components/employees/EmployeeList";
 import Employees from "./components/employees/Employees";
 import EmployeeDetails from "./components/employees/EmployeeDetails";
 
@@ -22,11 +23,15 @@ root.render(
           <Route path=":id" element={<TicketDetails />} />
           <Route path="create" element={<CreateTicket />} />
         </Route>
+      </Route>
+      <Route path="/" element={<App />}>
         <Route path="customers" element={<Customers />}>
           <Route index element={<Customers />}></Route>
         </Route>
+      </Route>
+      <Route path="/" element={<App />}>
         <Route path="employees" element={<Employees />}>
-        <Route index element={<Employees />} />
+        <Route index element={<EmployeeList />} />
         <Route path=":id" element={<EmployeeDetails />} />
         </Route>
       </Route>
