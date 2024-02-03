@@ -22,12 +22,12 @@ root.render(
           <Route path=":id" element={<TicketDetails />} />
           <Route path="create" element={<CreateTicket />} />
         </Route>
+        <Route path="customers" element={<Customers />}>
+          <Route index element={<Customers />}></Route>
+        </Route>
         <Route path="employees" element={<Employees />}>
         <Route index element={<Employees />} />
         <Route path=":id" element={<EmployeeDetails />} />
-        </Route>
-        <Route path="customers" element={<Customers />}>
-          <Route index element={<Customers />}></Route>
         </Route>
       </Route>
     </Routes>
