@@ -8,7 +8,8 @@ import ServiceTickets from "./components/tickets/ServiceTickets";
 import TicketsList from "./components/tickets/TicketsList";
 import TicketDetails from "./components/tickets/TicketDetails";
 import CreateTicket from "./components/tickets/CreateTicket";
-import Customers from "./components/Customers";
+import Customers from "./components/customers/Customers";
+import CustomerList from "./components/customers/CustomerList"
 import EmployeeList from "./components/employees/EmployeeList";
 import Employees from "./components/employees/Employees";
 import EmployeeDetails from "./components/employees/EmployeeDetails";
@@ -26,7 +27,7 @@ root.render(
       </Route>
       <Route path="/" element={<App />}>
         <Route path="customers" element={<Customers />}>
-          <Route index element={<Customers />}></Route>
+          <Route index element={<CustomerList />}></Route>
         </Route>
       </Route>
       <Route path="/" element={<App />}>
