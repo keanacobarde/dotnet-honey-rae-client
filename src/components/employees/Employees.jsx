@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import { Table } from "reactstrap";
+import { getEmployees } from '../../data/employeesData';
+import { Link } from "react-router-dom";
+
 
 function Employees() {
     const [employees, setEmployees] = useState([]);
 
     useEffect(() => {
-      getServiceTickets().then(setTickets);
+      getEmployees().then(setEmployees);
     }, []);
   
     return (
