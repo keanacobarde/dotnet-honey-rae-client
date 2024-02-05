@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Table } from "reactstrap";
-import { Link } from "react-router-dom";
 import { getCustomers } from "../../data/customersData";
 
 
