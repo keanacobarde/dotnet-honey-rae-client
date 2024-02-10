@@ -41,8 +41,8 @@ export default function CreateTicket() {
     className="mb-3"
     type="select"
     id="customerId"
-    name="text"
-    placeholder="CUstomer"
+    name="customerId"
+    placeholder="Customer"
     value={formInput.customerId}
     onChange={handleChange}
   >
@@ -61,7 +61,7 @@ export default function CreateTicket() {
     className="mb-3"
     type="select"
     id="employeeId"
-    name="text"
+    name="employeeId"
     placeholder="Employee"
     value={formInput.employeeId}
     onChange={handleChange}
@@ -79,7 +79,7 @@ export default function CreateTicket() {
           </Label>
           <Input
             id="description"
-            name="text"
+            name="description"
             placeholder="Description of Issue"
             type="text"
             value={formInput.description}
