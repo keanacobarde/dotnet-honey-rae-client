@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { Form, Row, Col, FormGroup, Label, Input, Button} from "reactstrap";
 import { getEmployees } from "../../data/employeesData";
 import { getCustomers } from "../../data/customersData";
+import { createServiceTicket } from "../../data/serviceTicketsData";
 
 // Setting Initial State
 const initialState = {
-  customerId: '',
-  employeeId: '',
+  customerId: 0,
+  employeeId: 0,
   description: '',
   emergency: false,
 };
@@ -33,7 +34,7 @@ export default function CreateTicket() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.warn(formInput);
+    createServiceTicket(formInput).then(console.warn);
   }
 
   return (<Form onSubmit={handleSubmit}>
