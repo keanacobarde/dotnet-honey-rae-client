@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Table } from "reactstrap";
+import { Button, Table } from "reactstrap";
 import { getServiceTickets } from "../../data/serviceTicketsData";
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,10 @@ export default function TicketsList() {
   useEffect(() => {
     getServiceTickets().then(setTickets);
   }, []);
+
+  const handleDelete = () => {
+    console.warn('Delete?');
+  }
 
   return (
     <Table>
@@ -30,6 +34,9 @@ export default function TicketsList() {
             <td>{t.dateCompleted?.split("T")[0] || "Incomplete"}</td>
             <td>
               <Link to={`${t.id}`}>Details</Link>
+            </td>
+            <td onClick={handleDelete}>
+              <Button color="danger"> Delete </Button>
             </td>
           </tr>
         ))}
