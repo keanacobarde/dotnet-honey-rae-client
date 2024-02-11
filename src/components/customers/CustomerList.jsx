@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Table } from "reactstrap";
-import { Link } from "react-router-dom";
 import { getCustomers } from "../../data/customersData";
 
 
@@ -17,8 +16,7 @@ export default function Customers() {
         <tr>
           <th>Id</th>
           <th>Name</th>
-          <th>Address/</th>
-          <th>Customer Details</th>
+          <th>Address</th>
           <th></th>
         </tr>
       </thead>
@@ -28,9 +26,6 @@ export default function Customers() {
             <th scope="row">{c.id}</th>
             <td>{c.name}</td>
             <td>{c.address}</td>
-            <td>
-              <Link to={`${c.id}`}>Details</Link>
-            </td>
           </tr>
         ))}
       </tbody>

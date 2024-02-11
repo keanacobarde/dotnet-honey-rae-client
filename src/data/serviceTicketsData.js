@@ -8,3 +8,25 @@ export const getServiceTickets = () => {
 export const getServiceTicketById = (id) => {
   return fetch(`${_apiUrl}/${id}`).then((r) => r.json());
 };
+
+//POST - Creating a Service Ticket
+export const createServiceTicket = async (payload) => {
+  try {
+    const response = await fetch(`${_apiUrl}/post`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      throw new Error('Error creating ticket');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(`Error creating ticket: ${error.message}`);
+  }
+};
