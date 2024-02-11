@@ -23,14 +23,20 @@ export default function CreateTicket() {
   }, []);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked  } = e.target;
+    if (e.name == emergency) {}
     setFormInput((prevState) => ({
       ...prevState,
-      [name]: value,
+      [name]: type == 'checkbox' ? checked : value,
     }));
   };
 
-  return (<Form>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.warn(formInput);
+  }
+
+  return (<Form onSubmit={handleSubmit}>
     <Row>
       <Col md={6}>
         <FormGroup>
@@ -89,8 +95,14 @@ export default function CreateTicket() {
       </Col>
     </Row>
     <FormGroup check>
-    <Input type="checkbox" />
-    {' '}
+    <Input 
+    id="emergency"
+    type="checkbox" 
+    name="emergency"
+    checked={formInput.emergency}
+    onChange={handleChange}
+    />
+    {''}
     <Label check>
       Emergency?
     </Label>
