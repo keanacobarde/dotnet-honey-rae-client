@@ -30,3 +30,21 @@ export const createServiceTicket = async (payload) => {
     throw new Error(`Error creating ticket: ${error.message}`);
   }
 };
+
+//DELETE - DELETING A SERVICE TICKET
+export const deleteServiceTicket = async () => {
+  try {
+    const response = await fetch(`${_apiUrl}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Error deleting ticket');
+    }
+  } catch (error) {
+    throw new Error(`Error deleting ticket: ${error.message}`);
+  }
+};
