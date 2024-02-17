@@ -43,6 +43,9 @@ export default function TicketsList() {
             <td onClick={handleDelete}>
               <Button color="danger" id={t.id}> Delete </Button>
             </td>
+            <td>
+             {t.dateCompleted == null ?  <Button color="success"> Complete </Button> : ''}
+            </td>
           </tr>
         ))}
       </tbody>
