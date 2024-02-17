@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Table } from "reactstrap";
-import { deleteServiceTicket, getServiceTickets } from "../../data/serviceTicketsData";
+import { completeServiceTicket, deleteServiceTicket, getServiceTickets } from "../../data/serviceTicketsData";
 import { Link } from "react-router-dom";
 
 export default function TicketsList() {
@@ -17,6 +17,11 @@ export default function TicketsList() {
   const handleDelete = (e) => {
     const { id } = e.target;
     deleteServiceTicket(id).then(setTickets);
+  }
+
+  const handleComplete = (e) => {
+    const { id } = e.target;
+    completeServiceTicket(id).then(setTickets);
   }
 
   return (
@@ -44,7 +49,7 @@ export default function TicketsList() {
               <Button color="danger" id={t.id}> Delete </Button>
             </td>
             <td>
-             {t.dateCompleted == null ?  <Button color="success"> Complete </Button> : ''}
+             {t.dateCompleted == null ?  <Button color="success" id={t.id} onClick={handleComplete}> Complete </Button> : ''}
             </td>
           </tr>
         ))}

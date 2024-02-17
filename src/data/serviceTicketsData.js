@@ -51,3 +51,24 @@ export const deleteServiceTicket = async (id) => {
     throw new Error(`Error deleting ticket: ${error.message}`);
   }
 };
+
+// PUT - MARKING TICKET AS COMPLETE
+export const completeServiceTicket = async (id) => {
+  try {
+    const response = await fetch(`${_apiUrl}/${id}/complete`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Error completing ticket');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(`Error completing ticket: ${error.message}`);
+  }
+};
